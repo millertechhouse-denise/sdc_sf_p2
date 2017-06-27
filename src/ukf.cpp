@@ -399,14 +399,7 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
 		VectorXd z_diff = Zsig.col(i) - z_pred;
 
 		//normalize
-		while (z_diff(1) > M_PI) 
-		{
-			z_diff(1) -= 2.*M_PI;
-		}
-		while (z_diff(1) < -M_PI)
-		{
-			z_diff(1)+=2.*M_PI;
-		} 
+		NormalizeAngle(z_diff(1));
 
 		S = S + weights_(i) * z_diff * z_diff.transpose();
 
