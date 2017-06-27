@@ -127,6 +127,11 @@ public:
 	* Generate sigma points
 	*/
 	void GenerateSigmaPoints(double delta_t, MatrixXd L);
+	
+	/**
+	* Normalize Angle
+	*/
+	void NormalizeAngle(double& phi);
 
 };
 
