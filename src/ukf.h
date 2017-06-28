@@ -78,7 +78,8 @@ public:
 	///* timestamps
 	double previous_timestamp_;
 	
-
+	MatrixXd R_radar_;
+	MatrixXd R_laser_;
 	
 
 	/**

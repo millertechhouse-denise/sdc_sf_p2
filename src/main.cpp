@@ -55,6 +55,12 @@ int main(int argc, char* argv[]) {
   check_arguments(argc, argv);
 
   string in_file_name_ = argv[1];
+	int data_set = 1;
+	
+	if(in_file_name_.find("sample") != string::npos)
+	{
+		data_set = 2;
+	}
   ifstream in_file_(in_file_name_.c_str(), ifstream::in);
 
   string out_file_name_ = argv[2];
@@ -130,6 +136,7 @@ int main(int argc, char* argv[]) {
   }
 
   // Create a UKF instance
+	//there are different parameters for each dataset
   UKF ukf;
 
   // used to compute the RMSE later
